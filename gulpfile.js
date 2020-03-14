@@ -5,7 +5,6 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
-var imagemin = require('gulp-imagemin');
 var cleanCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
 
@@ -57,20 +56,6 @@ function minifyCSS() {
     .pipe(gulp.dest('css/min'));
 }
 
-// Optimizing Images
-function optimiseImages() {
-  return (
-    gulp
-      .src('./img/**/*.+(png|jpg|jpeg|gif|svg)')
-      // Caching images that ran through imagemin
-      .pipe(
-        imagemin({
-          interlaced: true,
-        }),
-      )
-      .pipe(gulp.dest('./img'))
-  );
-}
 
 function watch() {
   gulp.watch(paths.styles.src, styles);
