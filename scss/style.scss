@@ -1,0 +1,66 @@
+@import "./normalize";
+@import "./reset";
+@import "./flex";
+$bg-color: #0066ff;
+
+body {
+  height: 100vh;
+  width: 100vw;
+  padding: 32px;
+  box-sizing: border-box;
+  background-color: $bg-color;
+  font-family: 'Oswald', sans-serif;
+  @include flexbox();
+	@include flex-direction(column);
+	@include justify-content(center);
+  @include align-items(center);
+
+  
+  h1 {
+    font-size: 64px;
+    font-weight: 600;
+    color: white;
+    line-height: 1;
+    margin: 0 0 16px;
+    text-align: center;
+
+    @media screen and (max-width: 480px) {
+      font-size: 28px;
+      margin: 0 0 8px;
+		}
+  }
+
+  p {
+    font-size: 18px;
+    color: rgba(white, 0.8);
+    text-align: center;
+    @media screen and (max-width: 480px) {
+			font-size: 14px;
+		}
+  }
+
+  .site--social {
+    @include flexbox();
+    @include flex-direction(row);
+    @include justify-content(center);
+    @include align-items(center);
+    margin: 32px 0 0;
+
+    a {
+      display: inline-block;
+      margin: 0 8px;
+      opacity: 0.8;
+      transition: all 0.3s;
+      cursor: pointer;
+      svg {
+        path {
+          fill: white;
+        }
+      }
+
+      &:hover, &:focus, &:active {
+        opacity: 1;
+      }
+    }
+  }
+}
