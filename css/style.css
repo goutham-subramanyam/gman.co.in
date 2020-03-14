@@ -577,6 +577,7 @@ table th[class*=col-] {
 body {
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
   padding: 32px;
   box-sizing: border-box;
   background-color: #0066ff;

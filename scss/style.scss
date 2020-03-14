@@ -6,6 +6,7 @@ $bg-color: #0066ff;
 body {
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
   padding: 32px;
   box-sizing: border-box;
   background-color: $bg-color;
